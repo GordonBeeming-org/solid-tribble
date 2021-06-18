@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Gordon Beeming (Twitter)
+    url: https://twitter.com/GordonBeeming
+    about: Please ask and answer questions here.
+  - name: Gordon Beeming (Keybase)
+    url: https://keybase.io/gordonbeeming
+    about: Need to keep something more secret
+  - name: Gordon Beeming (Email)
+    url: mailto:github@beeming.co.za
+    about: Mail me if needed

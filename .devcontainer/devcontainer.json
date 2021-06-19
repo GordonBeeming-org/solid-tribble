@@ -16,8 +16,9 @@
     "eamodio.gitlens",
     "ms-mssql.mssql"
   ],
-  "terminal.integrated.shell.linux": "/opt/microsoft/powershell/7/pwsh",
   "settings": {
+    "terminal.integrated.shell.linux": "/opt/microsoft/powershell/7/pwsh",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
     "workbench.colorTheme": "Visual Studio 2019 Light",
     "mssql.maxRecentConnections": 5,
     "mssql.connections": [

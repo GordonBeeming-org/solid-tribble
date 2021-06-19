@@ -1,4 +1,4 @@
-# Just another Demo Repo
+# SQL Dev with dev containers
 
 This repo is 1 of the demos repo's that [Gordon Beeming](https://beeming.dev/) has most likely created.
 

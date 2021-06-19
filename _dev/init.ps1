@@ -36,3 +36,4 @@ do
 } while ($attempts -gt 0)
 
 
+# dotnet new --install MSBuild.Sdk.SqlProj.Templates

@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0
+FROM mcr.microsoft.com/dotnet/sdk:3.1
 
 # Install Powershell core
 RUN wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb \
@@ -21,8 +21,7 @@ RUN mkdir /app && chown devacc:devacc /app
 USER devacc
 
 # Get sqlpackage .NET Core for Linux 
-RUN mkdir ~/sqlpackage \
-&& cd ~/sqlpackage \
+RUN mkdir ~/sqlpackage && cd ~/sqlpackage \
 && wget -q https://download.microsoft.com/download/0/2/0/020aa2fa-f3f2-41ba-bacd-ff15557890d3/sqlpackage-linux-x64-en-US-15.0.5084.2.zip \
 && unzip sqlpackage-linux-x64-en-US-15.0.5084.2.zip \
 && rm sqlpackage-linux-x64-en-US-15.0.5084.2.zip \

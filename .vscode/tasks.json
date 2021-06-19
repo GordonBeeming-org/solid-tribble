@@ -1,0 +1,106 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "build",
+        "--configuration",
+        "release",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/Tribble.Contacts"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "simple build & publish",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "publish",
+        "--configuration",
+        "release",
+        "/p:TargetServerName=db_instance",
+        "/p:TargetPort=1433",
+        "/p:TargetDatabaseName=solid-tribble",
+        "/p:TargetUser=sa",
+        "/p:TargetPassword=P@ssw0rd12345",
+        "/p:IncludeCompositeObjects=True"
+      ],
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/Tribble.Contacts"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "advanced publish",
+      "command": "sqlpackage",
+      "type": "shell",
+      "args": [
+        "/Action:Publish",
+        "/SourceFile:Tribble.Contacts.dacpac",
+        "/TargetServerName:db_instance,1433",
+        "/TargetDatabaseName:solid-tribble",
+        "/TargetUser:sa",
+        "/TargetPassword:P@ssw0rd12345",
+        "/Properties:IncludeCompositeObjects=True"
+      ],
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/Tribble.Contacts/bin/Release/netstandard2.0"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+
+    // ,{
+    //   "label": "create table",
+    //   "command": "dotnet",
+    //   "type": "shell",
+    //   "args": [
+    //     "new",
+    //     "table",
+    //     "-n","${input:tableName}",
+    //     "-s","${input:schema}"
+    //   ],
+    //   "problemMatcher": "$msCompile",
+    //   "options": {
+    //     "cwd": "${workspaceFolder}/src/Tribble.Contacts/bin/Release/netstandard2.0"
+    //   },
+    //   "group": "none",
+    //   "presentation": {
+    //     "reveal": "silent"
+    //   }
+    // }    
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "schema",
+      "description": "Schmea Name.",
+      "default": "dbo"
+    },
+    {
+      "type": "promptString",
+      "id": "tableName",
+      "description": "Table Name."
+    }
+  ]
+}

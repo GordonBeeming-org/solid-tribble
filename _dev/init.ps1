@@ -35,7 +35,8 @@ do
     if ($attempts -gt 0) { Start-Sleep $sleepInSeconds }
 } while ($attempts -gt 0)
 
-dotnet publish --configuration release /p:TargetServerName=db_instance /p:TargetPort=1433 /p:TargetDatabaseName=solid-tribble /p:TargetUser=sa /p:TargetPassword=P@ssw0rd12345 /p:IncludeCompositeObjects=True
+. /app/_dev/build.ps1
+. /app/_dev/local-publish.ps1
 Invoke-Sqlcmd -ServerInstance "db_instance,1433" -Username SA -Password "P@ssw0rd12345" -InputFile "/app/_dev/init.sql";
 
 # dotnet new --install MSBuild.Sdk.SqlProj.Templates

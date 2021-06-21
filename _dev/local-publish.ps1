@@ -1,0 +1,2 @@
+cd /app/src/Tribble.Contacts
+sqlpackage /Action:Publish /SourceFile:Tribble.Contacts.dacpac /TargetServerName:db_instance,1433 /TargetDatabaseName:solid-tribble /TargetUser:sa /TargetPassword:P@ssw0rd12345 /Properties:IncludeCompositeObjects=True

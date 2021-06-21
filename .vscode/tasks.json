@@ -22,32 +22,7 @@
       }
     },
     {
-      "label": "simple build & publish",
-      "command": "dotnet",
-      "type": "shell",
-      "args": [
-        "publish",
-        "--configuration",
-        "release",
-        "/p:TargetServerName=db_instance",
-        "/p:TargetPort=1433",
-        "/p:TargetDatabaseName=solid-tribble",
-        "/p:TargetUser=sa",
-        "/p:TargetPassword=P@ssw0rd12345",
-        "/p:IncludeCompositeObjects=True"
-      ],
-      "problemMatcher": "$msCompile",
-      "options": {
-        "cwd": "${workspaceFolder}/src/Tribble.Contacts"
-      },
-      "group": "build",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      }
-    },
-    {
-      "label": "advanced publish",
+      "label": "publish database",
       "command": "sqlpackage",
       "type": "shell",
       "args": [

@@ -1,2 +1,2 @@
 cd /app/src/Tribble.Contacts
-dotnet build --configuration Release
+dotnet build --configuration release

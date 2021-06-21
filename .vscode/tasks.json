@@ -23,7 +23,7 @@
     },
     {
       "label": "publish database",
-      "command": "sqlpackage",
+      "command": "~/sqlpackage/sqlpackage",
       "type": "shell",
       "args": [
         "/Action:Publish",
@@ -32,11 +32,12 @@
         "/TargetDatabaseName:solid-tribble",
         "/TargetUser:sa",
         "/TargetPassword:P@ssw0rd12345",
-        "/Properties:IncludeCompositeObjects=True"
+        "/Properties:IncludeCompositeObjects=True",
+        "/Diagnostics:True"
       ],
       "problemMatcher": "$msCompile",
       "options": {
-        "cwd": "${workspaceFolder}/src/Tribble.Contacts/bin/Release/netstandard2.0"
+        "cwd": "${workspaceFolder}/src/Tribble.Contacts/bin/release/netstandard2.0"
       },
       "group": "build",
       "presentation": {

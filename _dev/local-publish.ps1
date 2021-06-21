@@ -1,2 +1,2 @@
-cd /app/src/Tribble.Contacts/bin/Release/netstandard2.0
+cd /app/src/Tribble.Contacts/bin/release/netstandard2.0
 ~/sqlpackage/sqlpackage /Action:Publish /SourceFile:Tribble.Contacts.dacpac /TargetServerName:db_instance,1433 /TargetDatabaseName:solid-tribble /TargetUser:sa /TargetPassword:P@ssw0rd12345 /Properties:IncludeCompositeObjects=True

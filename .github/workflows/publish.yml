@@ -9,6 +9,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: 'update version'
+      id: update-version
+      shell: bash
+      run: |
+        buildDateNumber=$(date '+%Y.%m.%d')
+        buildId=$GITHUB_RUN_NUMBER
+        buildNumber="$buildDateNumber.$buildId"
+        echo "$buildNumber"
+        echo "::set-output name=BUILD_NUMBER::$buildNumber"
+      working-directory: src/webapp
+  
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v1
       with:
@@ -16,8 +27,13 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - run: |
+        mkdir __downloads && cd __downloads
+        wget -q https://github.com/dah-dah-demos/stunning-memory/raw/main/files/demo.bak        
+      working_dir: ${GITHUB_WORKSPACE}
+
     - name: Build the solid-tribble-db Docker image
       run: |
-        docker build . --tag ghcr.io/dah-dah-demos/solid-tribble-db:latest
-        docker run ghcr.io/dah-dah-demos/solid-tribble-db:latest
-        docker push ghcr.io/dah-dah-demos/solid-tribble-db:latest
+        docker build --tag ghcr.io/dah-dah-demos/solid-tribble-db:dev_${{ steps.update-version.outputs.BUILD_NUMBER }} --tag ghcr.io/dah-dah-demos/solid-tribble-db:dev -f build/dockerfile .
+        docker push ghcr.io/dah-dah-demos/solid-tribble-db:dev_${{ steps.update-version.outputs.BUILD_NUMBER }}
+        docker push ghcr.io/dah-dah-demos/solid-tribble-db:dev

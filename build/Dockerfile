@@ -4,7 +4,7 @@ EXPOSE 1433
 USER root
 
 # Install Powershell core
-RUN wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb \
+RUN wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb \
 && dpkg -i packages-microsoft-prod.deb \
 && apt-get update \
 && apt-get install -y powershell
@@ -23,8 +23,9 @@ USER mssql
  
 COPY "__downloads" "/var/opt/mssql/backup/"
 
-ENTRYPOINT [ "/opt/microsoft/powershell/7/pwsh", "/var/opt/mssql/backup/init.ps1" ]
+COPY "build/entrypoint.sh" "/var/opt/mssql/backup/entrypoint.sh"
+COPY "build/init.ps1" "/var/opt/mssql/backup/init.ps1"
+COPY "build/init.sql" "/var/opt/mssql/backup/init.sql"
+COPY "src/Tribble.Contacts/bin/release/netstandard2.0/Tribble.Contacts.dacpac" "/var/opt/mssql/backup/Tribble.Contacts.dacpac"
 
-ENTRYPOINT ["/opt/mssql-tools/bin/sqlcmd","-S","localhost","-U","SA","-P","$SA_PASSWORD", "-Q","RESTORE DATABASE [demo] FROM DISK = '/var/opt/mssql/backup/demo.bak' WITH MOVE 'Demo' TO '/var/opt/mssql/data/demo.mdf', MOVE , MOVE 'Demo_log' TO '/var/opt/mssql/data/demo.ldf'"]
-
-CMD ["/opt/mssql/bin/sqlservr"]
+CMD ["/bin/bash","/var/opt/mssql/backup/entrypoint.sh"]

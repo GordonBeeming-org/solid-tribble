@@ -1,0 +1,1 @@
+/opt/microsoft/powershell/7/pwsh /var/opt/mssql/backup/init.ps1 & /opt/mssql/bin/sqlservr

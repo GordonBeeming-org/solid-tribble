@@ -13,7 +13,8 @@ services:
             bash -c "pwsh /app/_dev/init.ps1 && sleep infinity"
     
     db_instance:
-        image: ghcr.io/dah-dah-demos/solid-tribble-db@sha256:85a9371975f69d8296fa8175c3715231fa9b4a161ceb0031fa2574fc7de52abd
+        # image: mcr.microsoft.com/mssql/server:2019-latest
+        image: ghcr.io/dah-dah-demos/solid-tribble-db@sha256:30253b94232eed22b122651615ee362d452712619b39dcf63a468e81a560b9cc
         environment:
             - ACCEPT_EULA=Y
             - SA_PASSWORD=P@ssw0rd12345

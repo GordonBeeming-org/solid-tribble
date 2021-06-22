@@ -5,6 +5,9 @@ on: [push]
 jobs:
   publish-solid-tribble-db-image:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
 
     steps:
     - uses: actions/checkout@v2

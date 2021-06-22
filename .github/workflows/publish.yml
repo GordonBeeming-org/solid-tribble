@@ -19,6 +19,13 @@ jobs:
         echo "$buildNumber"
         echo "::set-output name=BUILD_NUMBER::$buildNumber"
       working-directory: src/webapp
+
+    - name: 'download backup files'
+      shell: bash
+      run: |
+        mkdir __downloads && cd __downloads
+        wget -q https://github.com/dah-dah-demos/stunning-memory/raw/main/files/demo.bak        
+      working-directory: ${GITHUB_WORKSPACE}
   
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v1
@@ -26,11 +33,6 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-
-    - run: |
-        mkdir __downloads && cd __downloads
-        wget -q https://github.com/dah-dah-demos/stunning-memory/raw/main/files/demo.bak        
-      working_dir: ${GITHUB_WORKSPACE}
 
     - name: Build the solid-tribble-db Docker image
       run: |

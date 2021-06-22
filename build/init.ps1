@@ -27,4 +27,4 @@ do
 cd /var/opt/mssql/backup
 /var/opt/mssql/sqlpackage/sqlpackage /Action:Publish /SourceFile:Tribble.Contacts.dacpac /TargetServerName:.,1433 /TargetDatabaseName:solid-tribble /TargetUser:sa /TargetPassword:$env:SA_PASSWORD /Properties:IncludeCompositeObjects=True
 
-/opt/mssql-tools/bin/sqlcmd -S ".,1433" -U SA -P $env:SA_PASSWORD -d "solid-tribble" -t "/var/opt/mssql/backup/init.sql"
+/opt/mssql-tools/bin/sqlcmd -S ".,1433" -U SA -P $env:SA_PASSWORD -d "solid-tribble" -i "/var/opt/mssql/backup/init.sql"

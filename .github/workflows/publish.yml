@@ -18,7 +18,6 @@ jobs:
         buildNumber="$buildDateNumber.$buildId"
         echo "$buildNumber"
         echo "::set-output name=BUILD_NUMBER::$buildNumber"
-      working-directory: src/webapp
 
     - name: 'download backup files'
       shell: bash

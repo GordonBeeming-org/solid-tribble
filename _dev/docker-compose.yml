@@ -14,7 +14,7 @@ services:
     
     db_instance:
         # image: mcr.microsoft.com/mssql/server:2019-latest
-        image: ghcr.io/dah-dah-demos/solid-tribble-db@sha256:30253b94232eed22b122651615ee362d452712619b39dcf63a468e81a560b9cc
+        image: ghcr.io/dah-dah-demos/solid-tribble-db:2021.06.22.19-dev
         environment:
             - ACCEPT_EULA=Y
             - SA_PASSWORD=P@ssw0rd12345

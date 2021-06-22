@@ -24,7 +24,7 @@ jobs:
       run: |
         mkdir __downloads && cd __downloads
         wget -q https://github.com/dah-dah-demos/stunning-memory/raw/main/files/demo.bak        
-      working-directory: ${GITHUB_WORKSPACE}
+      #working-directory: ${GITHUB_WORKSPACE}
   
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v1

@@ -13,7 +13,7 @@ services:
             bash -c "pwsh /app/_dev/init.ps1 && sleep infinity"
     
     db_instance:
-        image: mcr.microsoft.com/mssql/server
+        image: ghcr.io/dah-dah-demos/solid-tribble-db:dev
         environment:
             - ACCEPT_EULA=Y
             - SA_PASSWORD=P@ssw0rd12345

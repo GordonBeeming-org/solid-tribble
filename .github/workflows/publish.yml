@@ -22,6 +22,9 @@ jobs:
         echo "$buildNumber"
         echo "::set-output name=BUILD_NUMBER::$buildNumber"
 
+    - name: Build
+      run: dotnet build --configuration release --verbosity normal /nologo /property:GenerateFullPaths=true
+
     - name: 'download backup files'
       shell: bash
       run: |

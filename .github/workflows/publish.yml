@@ -35,6 +35,6 @@ jobs:
 
     - name: Build the solid-tribble-db Docker image
       run: |
-        docker build --tag ghcr.io/dah-dah-demos/solid-tribble-db:${{ steps.update-version.outputs.BUILD_NUMBER }}_dev --tag ghcr.io/dah-dah-demos/solid-tribble-db:dev -f build/dockerfile .
-        docker push ghcr.io/dah-dah-demos/solid-tribble-db:${{ steps.update-version.outputs.BUILD_NUMBER }}_dev
+        docker build --tag ghcr.io/dah-dah-demos/solid-tribble-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev --tag ghcr.io/dah-dah-demos/solid-tribble-db:dev -f build/dockerfile .
+        docker push ghcr.io/dah-dah-demos/solid-tribble-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev
         docker push ghcr.io/dah-dah-demos/solid-tribble-db:dev

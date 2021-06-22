@@ -24,6 +24,7 @@ jobs:
 
     - name: Build
       run: dotnet build --configuration release --verbosity normal /nologo /property:GenerateFullPaths=true
+      working-directory: src/Tribble.Contacts
 
     - name: 'download backup files'
       shell: bash

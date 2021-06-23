@@ -4,6 +4,7 @@ CREATE TABLE [dbo].[tb_Contacts]
   FirstName NVARCHAR(150) NOT NULL,
   LastName NVARCHAR(150) NOT NULL,  
   EmailAddress NVARCHAR(150) NOT NULL,
+  MobileNumber NVARCHAR(150) NULL,
   CONSTRAINT PK_tb_Contacts_EmailAddress
                PRIMARY KEY CLUSTERED (EmailAddress)
 )

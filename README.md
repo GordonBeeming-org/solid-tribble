@@ -1,7 +1,5 @@
 # SQL Dev with dev containers
 
-This repo is 1 of the demos repo's that [Gordon Beeming](https://beeming.dev/) has most likely created.
-
 For my primary account check out [@Gordon-Beeming](https://github.com/Gordon-Beeming)
 
 - 🔭 I'm currently working on posts and videos around tips a tricks to make your applications run better

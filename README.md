@@ -8,5 +8,5 @@ For my primary account check out [@Gordon-Beeming](https://github.com/Gordon-Bee
 - 🐤 I'm on Twitter as [@GordonBeeming](https://twitter.com/GordonBeeming) 
 - 📺 and YouTube [Gordon Beeming - Tech](https://www.youtube.com/channel/UCK-ytrN_3eKHNkQQYligVHQ)
 - 💬 Ask me about Azure DevOps or GitHub
-- 📫 How to reach me: [https://beeming.dev/](https://beeming.dev/)
+- 📫 How to reach me: [https://profile.gordonbeeming.xyz](https://profile.gordonbeeming.xyz/)
 - 😄 Pronouns: he/him/his
